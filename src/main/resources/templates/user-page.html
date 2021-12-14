@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница пользователя</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
+</head>
+<body>
+    <form>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+
+                <tr th:each ="user : ${users}">
+                    <td th:utext="${user.id}"></td>
+                    <td th:utext="${user.username}"></td>
+                    <td th:utext="${user.password}"></td>
+                    <td th:utext="${user.email}"></td>
+
+                </tr>
+            <thead> <tr><th><input formaction="/logout" formmethod="get" type="submit" value="Выйти из системы"></th></tr></thead>
+        </table>
+    </form>
+</body>
+</html>
